@@ -1,16 +1,18 @@
-### Hi there 👋
 
-<!--
-**Zero2Transformers/Zero2Transformers** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 1. Anaconda setup
+The enviroment that we are going to use throughout this course is Anaconda. 
+Download and install it, from https://www.anaconda.com/. 
 
-Here are some ideas to get you started:
+Open a terminal and create an environment using the command:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+`conda create --name z2t python=3.10 -y`
+
+Next, activate the environment using the command:
+
+`conda activate z2t`
+
+
+## 2. Install dependencies
+Within the terminal, direct yourself to the zero2transformers's folder and continue with installation of requirements:
+
+`pip install -r requirements.txt` 
