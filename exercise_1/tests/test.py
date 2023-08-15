@@ -2,6 +2,20 @@ from abc import ABC, abstractmethod
 import random
 from code.single_neuron import SingleNeuron
 from code.mse import MSE
+from IPython.display import Image, display
+
+def display_image():
+    image_path = "../../the-office-congratulations.jpg"
+    display(Image(filename=image_path))
+
+
+def test_case_runner(test_classes):
+    all_tests_passed = True
+    for test_class in test_classes:
+        all_tests_passed = all_tests_passed and test_class()
+
+    if all_tests_passed:
+        display_image()
 
 
 class UnitTest(ABC):
@@ -10,10 +24,13 @@ class UnitTest(ABC):
             test_passed = self.test()
             if test_passed:
                 print(self.define_success_message())
+                return True
             else:
                 print(self.define_failure_message())
+                return False
         except Exception as exception:
             print(self.define_exception_message(exception))
+            return False
 
     @abstractmethod
     def test(self):
