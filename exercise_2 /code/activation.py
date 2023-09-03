@@ -14,8 +14,9 @@ class ReLU(Network):
         # Cache away any value that we could use during backpropagation.       #
         ########################################################################
 
-        pass
-
+        self.cache = X
+        result = np.maximum(X,0)
+        
         ########################################################################
         #                           END OF TODO                                #
         ########################################################################
@@ -33,7 +34,8 @@ class ReLU(Network):
         # dout represents the upstream derivative                              #
         ########################################################################
 
-        pass
+        X = self.cache
+        result = (X > 0) * dout
 
         ########################################################################
         #                           END OF TODO                                #
@@ -53,7 +55,8 @@ class Sigmoid(Network):
         # Cache away any value that we could use during backpropagation.       #
         ########################################################################
 
-        pass
+        self.cache = 1 / (1 + np.exp(-X))
+        result = self.cache
 
         ########################################################################
         #                           END OF TODO                                #
@@ -72,7 +75,7 @@ class Sigmoid(Network):
         # dout represents the upstream derivative                              #
         ########################################################################
 
-        pass
+        result = self.cache * (1 - self.cache) * dout
 
         ########################################################################
         #                           END OF TODO                                #

@@ -3,9 +3,8 @@ from code.boiler_plate.loss import Loss
 
 class MSE(Loss):
     def forward(self, y_out, y_truth):
-        
         result = None
-        
+
         ########################################################################
         # TODO:                                                                #
         # Implement the forward pass of the MSE loss function for a single     #
@@ -15,17 +14,16 @@ class MSE(Loss):
         # y_truth is the label                                                 #
         #                                                                      #
         ########################################################################
-        
-        pass
-        
+
+        result = (y_out - y_truth) ** 2
+
         ########################################################################
         #                           END OF TODO                                #
         ########################################################################
-        
+
         return result
 
     def backward(self, y_out, y_truth, n):
-        
         result = None
 
         ########################################################################
@@ -35,11 +33,10 @@ class MSE(Loss):
         # n is the number of training instances                                #
         ########################################################################
 
-
-        pass
+        result = 2 * (y_out - y_truth) / n
 
         ########################################################################
         #                           END OF TODO                                #
         ########################################################################
-        
+
         return result

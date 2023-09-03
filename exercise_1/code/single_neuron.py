@@ -18,8 +18,9 @@ class SingleNeuron(Network):
         # self.cache = ...                                                     #
         #                                                                      #
         ########################################################################
-        
-        pass
+
+        self.cache = X
+        result = self.w * X
 
         ########################################################################
         #                           END OF TODO                                #
@@ -38,7 +39,8 @@ class SingleNeuron(Network):
         # dout represents the upstream derivative                              #
         ########################################################################
 
-        pass
+        X = self.cache
+        result = X * dout
 
         ########################################################################
         #                           END OF TODO                                #

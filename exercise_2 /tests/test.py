@@ -7,7 +7,7 @@ from IPython.display import Image, display
 
 
 def display_image():
-    image_path = "../../the-office-congratulations.jpg"
+    image_path = "../the-office-congratulations.jpg"
     display(Image(filename=image_path))
 
 
