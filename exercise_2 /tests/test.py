@@ -14,7 +14,11 @@ def display_image():
 def test_case_runner(test_classes):
     all_tests_passed = True
     for test_class in test_classes:
-        all_tests_passed = all_tests_passed and test_class()
+        instance = test_class()  # create an instance of the class
+        test_result = (
+            instance()
+        )  # call the instance, this will execute the __call__ method
+        all_tests_passed = all_tests_passed and test_result
 
     if all_tests_passed:
         display_image()
